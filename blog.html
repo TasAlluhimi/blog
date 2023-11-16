@@ -6,18 +6,25 @@
     <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
     <title>Blog</title>
   </head>
-  <body style="background-color: rgba(250, 235, 215, 0.533);">
+  <body style="background-color: rgba(250, 235, 238, 0.562);">
     <nav style="display: flex; justify-content: center; justify-content: space-between; align-items: center;">
-        <h1>Hello <span id="UserName"></span></h1>
-        <button id="out" style="height: 5vh;" type="button">Sign out</button>
+      <a href="index.html"><img src="https://cdn-icons-png.flaticon.com/128/8928/8928669.png" height="60" alt=""></a>
+        <h1>Weclome to Tasneem's blog, <span id="UserName"></span>!</h1>
+        <!-- <button id="out" style="height: 5vh;" type="button">Sign out</button> -->
 
+        
     </nav>
-    <div style="border: 1px solid black; display: flex; justify-content: center;">
+    <header>
+      <div style="background-image: url('https://images.pexels.com/photos/2948636/pexels-photo-2948636.jpeg?auto=compress&cs=tinysrgb&w=1600');height: 84vh; background-repeat: no-repeat; background-size: cover;">
+
+      </div>
+    </header>
+    <div style="border: 1px solid black; display: flex; justify-content: center; margin-top: 100px;">
     <div style="width: 25rem;">
         <textarea name="textarea" cols="10" rows="10" class="w-50"></textarea>
       </div>
     </div>
-    <button id="btn">add</button>
+    <button style="margin-top: 10px;" id="btn">Add!</button>
     
       <div id="blog"></div>
   </body>

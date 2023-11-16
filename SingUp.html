@@ -44,8 +44,8 @@
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <img
-            src="https://cdn-icons-png.flaticon.com/128/12222/12222809.png"
-            height="40"
+            src="https://cdn-icons-png.flaticon.com/128/8928/8928669.png"
+            height="60"
             alt="MDB Logo"
             loading="lazy"
           />
@@ -58,7 +58,7 @@
       <div
         class="p-5 text-center bg-image"
         style="
-          background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+          background-image: url('https://images.pexels.com/photos/2948636/pexels-photo-2948636.jpeg?auto=compress&cs=tinysrgb&w=1600');
           height: 84vh;
         "
       >
@@ -73,6 +73,7 @@
         >
           <div class="cont">
             <h2>SingUp</h2>
+            <h6 id="error-mes" style="color: red;"></h6>
             <input id="name" type="text" placeholder="Your Name:" />
             <input id="email" type="email" placeholder="Email:" />
             <input id="password" type="password" placeholder="password:" />
@@ -104,19 +105,21 @@
       let email = document.getElementById("email");
       let password = document.getElementById("password");
 
+      let error_message = document.getElementById("error-mes");
+
       let nameValid = /^[A-Za-z]{5,}$/;
       let emailValid =
         /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
       let passwordValid = /^\d{6,}$/;
 
       if (name.value === "" || email.value === "" || password.value === "") {
-        alert("input in empty");
+        error_message.innerText ="input in empty";
       } else if (!nameValid.test(name.value)) {
-        alert("name is only character and more than 5");
+        error_message.innerText = "name is only character and more than 5";
       } else if (!email.value.match(emailValid)) {
-        alert("email is invalled");
+        error_message.innerText = "email is invalled";
       } else if (!password.value.match(passwordValid)) {
-        alert("password is only number and more than 6");
+        error_message.innerText = "password is only number and more than 6";
       } else {
         fetch("https://655127797d203ab6626e943b.mockapi.io/users", {
           method: "POST",

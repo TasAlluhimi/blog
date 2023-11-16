@@ -6,14 +6,26 @@
  
  btn.addEventListener("click", () => {
  
-     // let text = document.createElement("p")
-     let texterea = CKEDITOR.instances.textarea.getData();
-     console.log("texterea");
-     btn.insertAdjacentHTML("beforebegin", texterea)
  
+     let texterea = CKEDITOR.instances.textarea.getData();
+  
+    //  creating pre 
+    let pre = document.createElement("pre");
+    blog.appendChild(pre)
+    pre.innerHTML= `<pre>${texterea}</pre>`;
+
+    // creating del bttn 
+    let bttn = document.createElement("button");
+    bttn.innerText = "Delete!";
+    bttn.addEventListener("click", () =>{
+        pre.innerHTML ='';
+        bttn.remove();
+    })
+    blog.appendChild(bttn)
+        
  })
 
-
+//  check the user aothority 
  let username = localStorage.getItem("User")
  let text = document.getElementById("UserName");
  text.innerText = username;
